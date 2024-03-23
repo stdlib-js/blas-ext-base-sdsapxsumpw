@@ -41,38 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-sdsapxsumpw
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-sdsapxsumpw = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-sdsapxsumpw@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var sdsapxsumpw = require( 'path/to/vendor/umd/blas-ext-base-sdsapxsumpw/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-sdsapxsumpw@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.sdsapxsumpw;
-})();
-</script>
+var sdsapxsumpw = require( '@stdlib/blas-ext-base-sdsapxsumpw' );
 ```
 
 #### sdsapxsumpw( N, alpha, x, stride )
@@ -83,19 +77,19 @@ Adds a constant to each single-precision floating-point strided array element an
 var Float32Array = require( '@stdlib/array-float32' );
 
 var x = new Float32Array( [ 1.0, -2.0, 2.0 ] );
-var N = x.length;
 
-var v = sdsapxsumpw( N, 5.0, x, 1 );
+var v = sdsapxsumpw( 3, 5.0, x, 1 );
 // returns 16.0
 ```
 
 The function has the following parameters:
 
 -   **N**: number of indexed elements.
+-   **alpha**: scalar constant.
 -   **x**: input [`Float32Array`][@stdlib/array/float32].
 -   **stride**: index increment for `x`.
 
-The `N` and `stride` parameters determine which elements in the strided array are accessed at runtime. For example, to compute the sum of every other element in `x`,
+The `N` and stride parameters determine which elements in the strided array are accessed at runtime. For example, to compute the sum of every other element in the strided array,
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
@@ -128,9 +122,8 @@ Adds a constant to each single-precision floating-point strided array element an
 var Float32Array = require( '@stdlib/array-float32' );
 
 var x = new Float32Array( [ 1.0, -2.0, 2.0 ] );
-var N = x.length;
 
-var v = sdsapxsumpw.ndarray( N, 5.0, x, 1, 0 );
+var v = sdsapxsumpw.ndarray( 3, 5.0, x, 1, 0 );
 // returns 16.0
 ```
 
@@ -138,7 +131,7 @@ The function has the following additional parameters:
 
 -   **offset**: starting index for `x`.
 
-While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to access every other value in `x` starting from the second value
+While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the offset parameter supports indexing semantics based on a starting index. For example, to access every other value in the strided array starting from the second value
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
@@ -170,13 +163,8 @@ var v = sdsapxsumpw.ndarray( 4, 5.0, x, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {.factory;
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
 var filledarrayBy = require( '@stdlib/array-filled-by' );
 var sdsapxsumpw = require( '@stdlib/blas-ext-base-sdsapxsumpw' );
 
@@ -185,11 +173,6 @@ console.log( x );
 
 var v = sdsapxsumpw( x.length, 5.0, x, 1 );
 console.log( v );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -297,7 +280,7 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-sdsapxsumpw/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/umd
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
@@ -305,13 +288,13 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/blas/ext/base/dsapxsumpw]: https://github.com/stdlib-js/blas-ext-base-dsapxsumpw/tree/umd
+[@stdlib/blas/ext/base/dsapxsumpw]: https://github.com/stdlib-js/blas-ext-base-dsapxsumpw
 
-[@stdlib/blas/ext/base/sapxsumpw]: https://github.com/stdlib-js/blas-ext-base-sapxsumpw/tree/umd
+[@stdlib/blas/ext/base/sapxsumpw]: https://github.com/stdlib-js/blas-ext-base-sapxsumpw
 
-[@stdlib/blas/ext/base/sdsapxsum]: https://github.com/stdlib-js/blas-ext-base-sdsapxsum/tree/umd
+[@stdlib/blas/ext/base/sdsapxsum]: https://github.com/stdlib-js/blas-ext-base-sdsapxsum
 
-[@stdlib/blas/ext/base/sdssumpw]: https://github.com/stdlib-js/blas-ext-base-sdssumpw/tree/umd
+[@stdlib/blas/ext/base/sdssumpw]: https://github.com/stdlib-js/blas-ext-base-sdssumpw
 
 <!-- </related-links> -->
 
