@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-04-26)
+## Unreleased (2025-05-25)
 
 <section class="features">
 
@@ -16,12 +16,24 @@
 
 <!-- /.features -->
 
+<section class="bug-fixes">
+
+### Bug Fixes
+
+-   [`981c7ba`](https://github.com/stdlib-js/stdlib/commit/981c7baecfe6ab8ab4d973e95cd20453f90c5e28) - add missing checks for `N` and address failing tests stemming from refactoring
+
+</section>
+
+<!-- /.bug-fixes -->
+
 <section class="commits">
 
 ### Commits
 
 <details>
 
+-   [`981c7ba`](https://github.com/stdlib-js/stdlib/commit/981c7baecfe6ab8ab4d973e95cd20453f90c5e28) - **fix:** add missing checks for `N` and address failing tests stemming from refactoring _(by Athan Reines)_
+-   [`b6754fa`](https://github.com/stdlib-js/stdlib/commit/b6754fa04cce6d974386b81683be808322904557) - **refactor:** simplify implementation _(by Athan Reines)_
 -   [`9f85b5d`](https://github.com/stdlib-js/stdlib/commit/9f85b5d90cb6fcaf052116cd06aa4a693757f0ec) - **test:** fix description _(by Philipp Burckhardt)_
 -   [`6daebce`](https://github.com/stdlib-js/stdlib/commit/6daebceeb723392b00e87b2c6d7398b76be58b95) - **docs:** update related packages sections [(#5349)](https://github.com/stdlib-js/stdlib/pull/5349) _(by stdlib-bot)_
 -   [`edcbd07`](https://github.com/stdlib-js/stdlib/commit/edcbd07c090a97f6aaacd7e42c288e7685716994) - **feat:** add C `ndarray` API and refactor `blas/ext/base/sdsapxsumpw` [(#4815)](https://github.com/stdlib-js/stdlib/pull/4815) _(by Muhammad Haris, Athan Reines)_
