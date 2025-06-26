@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-05-25)
+## Unreleased (2025-06-26)
 
 <section class="features">
 
@@ -32,6 +32,7 @@
 
 <details>
 
+-   [`46ff8ea`](https://github.com/stdlib-js/stdlib/commit/46ff8ea7761ae438c4718681c5890f146fb0985e) - **docs:** minor clean-up _(by Philipp Burckhardt)_
 -   [`981c7ba`](https://github.com/stdlib-js/stdlib/commit/981c7baecfe6ab8ab4d973e95cd20453f90c5e28) - **fix:** add missing checks for `N` and address failing tests stemming from refactoring _(by Athan Reines)_
 -   [`b6754fa`](https://github.com/stdlib-js/stdlib/commit/b6754fa04cce6d974386b81683be808322904557) - **refactor:** simplify implementation _(by Athan Reines)_
 -   [`9f85b5d`](https://github.com/stdlib-js/stdlib/commit/9f85b5d90cb6fcaf052116cd06aa4a693757f0ec) - **test:** fix description _(by Philipp Burckhardt)_
